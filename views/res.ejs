@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-0">
+        <meta http-equiv= x-ua-compatible content= ie=edge>
+        <meta name= viewport content= width=device-width initial-scale=1.0>
+        <title>vitrine location</title>
+        <link rel="stylesheet" href="/res.css">
+        <link rel="stylesheet" href="/vit.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Economica&display=swap" rel="stylesheet">
+        <script src="vit.js"></script>
+        <style>
+            .cardajoute{
+                text-align: center;
+                margin-left: 192px;
+
+            }
+        </style>
+
+        
+ </head>
+ 
+
+<body class="B">
+    <header>
+        
+        <ul class="U">
+            <li ><img src="log.JPG" alt="" class="log"></li>
+            <div class="in">
+                <input type="email" name="email" placeholder="email" style="color: white; text-align: center;">
+                <input type="password" name="password" placeholder="password" style="color: white; text-align: center;" >
+                <input type="submit" value="submit">
+            </div>
+            <div class="AQ">
+                <li class="LL"><a href="in">inscription</a></li>
+                <li class="LL"><a href="res"></ahref="#">réservation</li>
+                <li class="LL"><a href="/">location</a></li>
+                <li class="LL"><a href="login">login</a></li>
+
+            </div>
+           <div id="line"></div>
+           
+        </ul>
+    </header>
+    <body>
+        <div style="color: #fff;">
+            <%= nom%>
+        </div>
+        <aside>
+            <div class="reservation">
+                <div class="blank"></div>
+    
+        
+            
+
+
+            
+             
+                <div class="blank"></div>
+            </div>
+            <div class="popup">
+                <div class="popup-image"></div>
+            </div>
+    
+            </div>
+        </aside>
+       
+            
+            <div class="kbir">
+               
+                <div class="kbir1">
+                    <%if (produit.length > 0) {%>
+                        <%for(i in produit) {%>
+                    <div class="card">
+                    <img src="/<%= produit[i].image %>" alt="sport" style="width:100%">
+                    <h1><%= produit[i].marque %></h1>
+                    <p class="price"><%= produit[i].prix %></p>
+                    
+                    <p><button><a href="/reservation/<%= produit[i].id %>/<%= nom %>">Procéder au paiement</a></button></p>
+                    <p><button><a href="/res/<%= produit[i].id %>/<%= nom %>">supprime</a></button></p>
+                    </div>
+                </div>
+            
+
+                    <%}%>
+
+                    <%}%>
+            </div>
+                    <!-- ajoute un produit  -->
+                    <div class="cardajoute">
+                        <form action="/pro" method="POST">
+                            <input type="hidden" name="masque" value="<%= nom %> ">
+                            <label for="">image</label><br>
+                            <input type="text" name="image"><br>
+                            <label for="">marque</label><br>
+                            <input type="text" name="marque"><br>
+                            <label for="">prix</label><br>
+                            <input type="text" name="prix"><br>
+                            <button type="submit">ajoute</button>
+                        </form>
+
+                    </div>
+
+
+
+
+
+<!-- 
+                    <div class="card">
+                        <img src="e200.jpg" alt="sport" style="width:100%">
+                        <h1>Mercedes E 200</h1>
+                        <p class="price">€59.99/Jour</p>
+                        
+                        <p><button>Procéder au paiement</button></p>
+                        </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                        
+                        
+                        <div class="card">
+                        <img src="je.jpg" alt="sport" style="width:100%">
+                        <h1>JEEP WRANGLER</h1>
+                        <p class="price">€79.99/Jour</p>
+                        
+                        <p><button>Procéder au paiement</button></p>
+                        </div>
+                        </div>
+
+
+                        <kbir2-->
+                        <!-- <div class="kbir2">
+                            <div class="card">
+                            <img src="a6.jpg" alt="sport" style="width:100%">
+                            <h1>AUDI A6</h1>
+                            <p class="price">€39.99/Jour</p>
+                            
+                            <p><button>Procéder au paiement</button></p>
+                            </div>
+
+
+
+                        <div class="card">
+                                <img src="san.jpg" alt="sport" style="width:100%">
+                                <h1>DACIA SANDERO</h1>
+                                <p class="price">€19.99/Jour</p>
+                                
+                                <p><button>Procéder au paiement</button></p>
+                                </div> -->
+                            
+                          <!-- <div class="card">
+                                <img src="m4.jpg" alt="sport" style="width:100%">
+                                <h1>BMW M4 CABRIOLET</h1>
+                                <p class="price">€89.99/Jour</p>
+                                
+                                <p><button>Procéder au paiement</button></p>
+                                </div>
+                                </div> -->
+                        
+                        
+                    </div>
+                    
+                    
+
+
+
+
+        </body>
+      <footer>
+ <div class="blank">  
+      
+</div>
+    <div id="line"></div>
+<div class="links">
+            <div class="links1">
+        <p> Home </p>
+        <p> Galerie </p>
+        <p> Inscription </p>
+        <p> Reservation </p>
+        </div>
+<div class="links2">
+            <p> Contact us </p>
+            <p> about us </p>
+            <p> FAQs </p>
+            <p> Blog</p>
+    </div>
+        
+<div class="email">
+        <p> Tapez votre email pour tenter de gagner une voiture de location  :</p>
+        <input type="text" placeholder="tapez votre email">
+        <button> Go </button>
+        </div>
+        </div>
+<div class="f2">
+<div class="copyright">
+        <p class="FFFF">@Copyright 2020. Tous les droits sont résérvés</p>
+      
+        
+        </footer>
+</html>

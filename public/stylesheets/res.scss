@@ -1,0 +1,104 @@
+$color:black;
+$color1: white;
+.log {
+	width: 20%;
+	height: 15%;
+}
+.LL {
+	display: inline-block;
+	float: right;
+	margin-left: 90px;
+	font-size: 28px;
+	font-family: 'Montserrat', sans-serif;
+	color:$color1;
+	font-weight: lighter;
+	position: relative;
+	top: 30px;
+	right: -170px;
+}
+body {
+	overflow-x: hidden;
+}
+.U {
+	list-style: none;
+}
+.B {
+	background-color: $color;
+	margin-right: 300px;
+}
+#line {
+	background-color:$color1;
+	height: 2px;
+	width: 1825px;
+	position: relative;
+	bottom: 37px;
+}
+.card {
+	box-shadow: 0 4px 8px 0 $color1;
+	max-width: 400px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+	position: relative;
+	left: 100px;
+	top: 76px;
+	margin-bottom: 100px;
+	button {
+		border: none;
+		outline: 0;
+		padding: 12px;
+		color: $color1;
+		background-color: gold;
+		text-align: center;
+		cursor: pointer;
+		width: 100%;
+		font-size: 18px;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+.price {
+	color: rgb(255, 255, 255);
+	font-size: 32px;
+}
+.kbir {
+	display: flex;
+	flex-wrap: wrap;
+}
+.kbir1 {
+	flex-basis: 50%;
+}
+.kbir2 {
+	flex-basis: 50%;
+}
+.reservation {
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	font-size: 30px;
+	border-radius: 4px;
+	justify-content: center;
+	margin-left: 15%;
+}
+.input-inscription {
+	input {
+		padding: 20px;
+		text-align: center;
+		border-radius: 24px;
+		width: 300px;
+		color: $color;
+		margin: 15px 0;
+	}
+}
+.ZEN {
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	font-size: 15px;
+	padding: 20px;
+	text-align: center;
+	border-radius: 24px;
+	width: 150px;
+	color: rgb(0, 0, 0);
+	margin: 15px 0;
+	background: gold;
+}

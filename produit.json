@@ -1,0 +1,20 @@
+[
+     {
+          "id": 1,
+          "image": "bmw.jpg",
+          "marque": "bmw",
+          "prix": "35"
+     },
+     {
+          "id": 2,
+          "image": "a6.jpg",
+          "marque": "audi",
+          "prix": "35"
+     },
+     {
+          "id": 3,
+          "image": "e200.jpg",
+          "marque": "mer",
+          "prix": "2000"
+     }
+]

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-0">
+        <meta http-equiv= x-ua-compatible content= ie=edge>
+        <meta name= viewport content= width=device-width initial-scale=1.0>
+        <title>vitrine location</title>
+     <link rel="stylesheet" href="vit.css">
+        <link rel="stylesheet" href="in.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Economica&display=swap" rel="stylesheet">
+        <script src="java.js"></script>
+
+        
+ </head>
+ 
+ <body class="B">
+    <header>
+        
+        <ul class="U">
+            <li ><img src="log.JPG" alt="" class="log"></li>
+            <div class="in">
+                <input type="email" name="email" placeholder="email" style="color: white; text-align: center;">
+                <input type="password" name="password" placeholder="password" style="color: white; text-align: center;" >
+                <input type="submit" value="submit">
+            </div>
+            <div class="AQ">
+                <li class="LL"><a href="in">inscription</a></li>
+                <li class="LL"><a href="res"></ahref="#">réservation</li>
+                <li class="LL"><a href="/">location</a></li>
+                <li class="LL"><a href="login">login</a></li>
+        </div>
+           <div id="line"></div>
+           
+        </ul>
+    </header>
+    <form  class="forme1">
+        
+        <input type="text" id="email" placeholder="enter voter email"  name="email">
+        <div id="erreur2"></div>
+        <input type="password" id="pass1" placeholder="enter voter mot de passe"  name="password">
+        <div id="erreur3"></div>
+        
+        <input type="submit" value="submit" onclick="verifieData()" id="sub">
+    </form>
+  
+    <div style="height:110px; width:100%"></div>
+    
+
+
+ <footer>
+    <div class="blank">  
+  
+    </div>
+    <div id="line"></div>
+    <div class="links">
+        <div class="links1">
+    <p> Home </p>
+    <p> Galerie </p>
+    <p> Inscription </p>
+    <p> Reservation </p>
+    </div>
+    <div class="links2">
+        <p> Contact us </p>
+        <p> about us </p>
+        <p> FAQs </p>
+        <p> Blog</p>
+    </div>
+    
+    <div class="email">
+    <p> Tapez votre email pour tenter de gagner une voiture de location  :</p>
+    <input type="text" placeholder="tapez votre email">
+    <button> Go </button>
+    </div>
+    </div>
+    <div class="f2">
+    <div class="copyright">
+    <p class="FFFF">@Copyright 2020. Tous les droits sont résérvés</p>
+  
+    
+    </footer>
+    <script>
+        function verifieData(){
+    var email = document.getElementById('email').value;
+    // console.log(name);
+    var password = document.getElementById('pass1').value;
+    var err = document.getElementById('erreur2');
+    var err2 = document.getElementById('erreur3');
+    fetch("../inscription.json")
+    .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    
+      for (var i = 0; i < data.length; i++) {
+        if(data[i].email == email && data[i].password == password){
+            
+
+            var x = data[i].email;
+           err.innerHTML= "email correct" ;
+            err.style.color="green";
+
+            err2.innerHTML = "password correct";
+            err2.style.color="green";
+            window.location.href="/res/"+data[i].nom;
+            break;
+              
+            
+
+
+            } else{
+                err.innerHTML = "email ou mot de passe est incorrect";
+                err.style.color="red";
+
+                err2.innerHTML = "incoremail ou mot de passe est incorrect";
+                err2.style.color="red";
+                
+                
+                
+
+            }   
+           
+      
+}
+})
+  .catch(err => {
+  })
+
+
+  
+}
+    </script>
+    </body>
+</html>

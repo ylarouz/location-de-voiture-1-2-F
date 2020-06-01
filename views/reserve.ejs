@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="UTF-0">
+        <meta http-equiv= x-ua-compatible content= ie=edge>
+        <meta name= viewport content= width=device-width initial-scale=1.0>
+        <title>vitrine location</title>
+        <link rel="stylesheet" href="/res.css">
+        <link rel="stylesheet" href="/vit.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Economica&display=swap" rel="stylesheet">
+        <script src="vit.js"></script>
+        <style>
+            input,button{
+                outline: none;
+                text-align: center;
+            }
+            .pop{
+                text-align: center; 
+                  margin-left: 246px; 
+                  color: #fff;
+                  border: solid 2px gold;
+                  box-shadow: 10px 10px 8px 10px #888888;
+                  display: none;
+             } 
+             .image-reservation{
+                text-align: center; 
+                  margin-left: 246px; 
+             } 
+        </style>
+
+        
+ </head>
+
+<body class="B">
+    <header>
+        
+        <ul class="U">
+            <li ><img src="log.JPG" alt="" class="log"></li>
+            <div class="in">
+                <input type="email" name="email" placeholder="email" style="color: white; text-align: center;">
+                <input type="password" name="password" placeholder="password" style="color: white; text-align: center;" >
+                <input type="submit" value="submit">
+            </div>
+            <div class="AQ">
+                <li class="LL"><a href="in">inscription</a></li>
+                <li class="LL"><a href="res"></ahref="#">réservation</li>
+                <li class="LL"><a href="/">location</a></li>
+                <li class="LL"><a href="login">login</a></li>
+
+            </div>
+           <div id="line"></div>
+           
+        </ul>
+    </header>
+    <body>
+        <div style="color: #fff;">
+            <%= nom%>
+        </div>
+        <aside>
+            <div class="reservation">
+                <div class="blank"></div>
+                <div>
+                    <% for (var i=0 ; i < produit.length; i++) {%>
+                        <% if(produit[i].id==imageId) {%>
+                    <img src="/<%= produit[i].image %>" alt="sport" style="width:100%" id="imagevoi">
+                    <%}%>
+                    <%}%>
+                </div>
+                
+            </div>
+        </aside>
+        
+                
+                <div class="image-reservation">
+                    <h1> RESERVATION </h1>
+                <div class="input-inscription">
+                    <p  class="VVV" >Votre nom et prénom</p><br>
+                    <input type="text" placeholder="écrire votre nom et prénom" name="username" id="name">
+                </div>
+                <div class="input-inscription">
+                    <p class="VVV">Votre année de naissance</p><br>
+                    <input type="date" placeholder="écrire votre année de naissance" name="username" id="naissance" max="2001-12-31">
+                </div>
+                <div class="input-inscription">
+                    <p class="VVV">Période de location</p><br>
+                    <input type="date" placeholder="écrire nombre des jours de location" name="username" id="periode1">
+                    <input type="date" placeholder="écrire nombre des jours de location" name="username" id="periode2">
+                </div>
+                <div class="input-inscription">
+                    <p class="VVV">Nombre des personnes</p><br>
+                    <input type="text" placeholder="écrire nombre des personnes" name="username" id="nombrePersonne">
+                </div>
+            
+
+
+            
+                <div class="bumm">
+                    <button type="submit" class="ZEN" onclick="zen()">VALIDER</button>
+                </div>
+                <div class="blank"></div>
+            </div>
+            <div class="popup">
+                <div class="popup-image"></div>
+            </div>
+    
+            </div>
+        </aside>
+    </div>
+       
+            
+<div id="afterResevation" class="pop" style="color: #fff;">
+
+                 <img src="" id="imagevoi2" alt="" style="width:100%" width="720px" > 
+                 <p id="nameUp"></p>
+                 <p id="anneUp"></p> 
+                 <p id="dureeUp"></p> 
+                 <p id="nbrUp"></p>       
+                        
+                    </div>
+                    
+                    
+
+
+
+
+        </body>
+      <footer>
+ <div class="blank">  
+      
+</div>
+    <div id="line"></div>
+<div class="links">
+            <div class="links1">
+        <p> Home </p>
+        <p> Galerie </p>
+        <p> Inscription </p>
+        <p> Reservation </p>
+        </div>
+<div class="links2">
+            <p> Contact us </p>
+            <p> about us </p>
+            <p> FAQs </p>
+            <p> Blog</p>
+    </div>
+        
+<div class="email">
+        <p> Tapez votre email pour tenter de gagner une voiture de location  :</p>
+        <input type="text" placeholder="tapez votre email">
+        <button> Go </button>
+        </div>
+        </div>
+<div class="f2">
+<div class="copyright">
+        <p class="FFFF">@Copyright 2020. Tous les droits sont résérvés</p>
+      
+        
+        </footer>
+        <script>
+            function zen(){
+            var div = document.getElementsByClassName('pop')[0];
+            div.style.display = "block"; 
+            var im1 =document.getElementById('imagevoi').src;
+            var im2 =document.getElementById('imagevoi2');
+            im2.src= im1;
+            var nom = document.getElementById('name').value;
+            var nowDate = new Date(Date.now());
+            var dateBirth = new Date(document.getElementById('naissance').value);
+            var thisYear = nowDate.getFullYear();
+            var yearOfBirth = dateBirth.getFullYear();
+            var age = thisYear - yearOfBirth;
+            var periode1 = new Date(document.getElementById('periode1').value);
+            var periode2 = new Date(document.getElementById('periode2').value);
+            var duree = (periode2 - periode1) / (3600*1000*24);
+            var nbr = document.getElementById('nombrePersonne').value;
+
+            document.getElementById('nameUp').innerText = nom;
+            document.getElementById('anneUp').innerText = age;
+            document.getElementById('dureeUp').innerText = duree;
+            document.getElementById('nbrUp').innerText = nbr;
+            
+
+
+            };
+        </script>
+        </body>
+</html>
